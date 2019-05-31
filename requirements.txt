@@ -3,3 +3,5 @@ flask_script
 uwsgi
 keras
 tensorflow
+opencv-python
+pillow
