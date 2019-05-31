@@ -7,7 +7,6 @@ import keras.applications.inception_v3 as inception_v3
 import keras.backend
 import tensorflow as tf
 import numpy as np
-import requests
 import pprint
 
 keras.backend.clear_session()
@@ -22,15 +21,15 @@ class InceptionV3Classifier(object):
 		self.target_size = target_size
 		self.graph = tf.get_default_graph()
 
-	def classify(self, img_path, top=5):
+	def classify(self, fp, top=5):
 	    """Classify image and return top matches.
-	    :param img_path: input file path of image.
+	    :param fp: image filename (str), pathlib.Path object or a file object.
 		:param top: number of top results to return.
 		:returns: predictions about detected classes in image.
 		:rtype: list[list[tuple(str: class_id, str: class_name, float: score)]]
 	    """
 	    # Open image
-	    img = Image.open(img_path)
+	    img = Image.open(fp)
 
 	    # Image resizing and preparation for keras.
 	    if img.size != self.target_size:
