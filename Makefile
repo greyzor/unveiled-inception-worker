@@ -6,3 +6,6 @@ install:
 
 run:
 	python3.7 manage.py run
+
+test:
+	python3.7 manage.py test
