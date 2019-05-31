@@ -1,0 +1,5 @@
+flask
+flask_script
+uwsgi
+keras
+tensorflow
