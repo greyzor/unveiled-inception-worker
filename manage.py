@@ -17,7 +17,7 @@ def run():
 
 @manager.command
 def test():
-    """ Run main application. """
+    """ Run tests. """
     pytest.main(['-x', 'tests/'])
 
 if __name__ == '__main__':
