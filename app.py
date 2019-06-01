@@ -36,7 +36,7 @@ def create_app():
     def classify_image():
         """ Task handler. """
         t_start = time.time()
-        stream = io.BytesIO(request.data)
+        stream = io.BytesIO(request.get_data())
         res = CLASSIFIER.classify(stream, top=5)
 
         # convert score from float to str
